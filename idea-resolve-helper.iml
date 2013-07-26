@@ -21,7 +21,7 @@
           <deploymentDescriptor name="web.xml" url="file://$TeamCityDistribution$/webapps/ROOT/WEB-INF/web.xml" />
         </descriptors>
         <webroots>
-          <root url="file://$TeamCityDistribution$/webapps/ROOT" relative="/" />
+          <root url="file://$TeamCityDistribution$/webapps/ROOT" relative="\" />
         </webroots>
       </configuration>
     </facet>

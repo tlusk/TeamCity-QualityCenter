@@ -24,7 +24,7 @@
     <facet type="web" name="server">
       <configuration>
         <webroots>
-          <root url="file://$MODULE_DIR$/resources" relative="/plugins/SPECIAL_NAME" />
+          <root url="file://$MODULE_DIR$/resources" relative="\plugins\QualityCenter" />
         </webroots>
       </configuration>
     </facet>
