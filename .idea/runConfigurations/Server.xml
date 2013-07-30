@@ -1,16 +1,10 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Server" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7">
+  <configuration default="false" name="Server" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" editBeforeRun="true" APPLICATION_SERVER_NAME="Tomcat 7">
     <option name="OPEN_IN_BROWSER" value="false" />
     <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8111" />
-    <option name="COMMON_VM_ARGUMENTS" value="-ea -Xmx384m -XX:MaxPermSize=200m -Ddebug=true -server -XX:+HeapDumpOnOutOfMemoryError -Djava.awt.headless -DTC.res.disableAll=true -Dteamcity.development.mode=true -Dteamcity.development.shadowCopyClasses=true -Dteamcity.data.path=%IDEA_RUN:TOMCAT_HOME%/../PluginDev.Data -Dteamcity_logs=%IDEA_RUN:TOMCAT_HOME%/logs -Dlog4j.configuration=file:%IDEA_RUN:TOMCAT_HOME%/conf/teamcity-server-log4j.xml" />
+    <option name="COMMON_VM_ARGUMENTS" value="-ea -Xmx384m -XX:MaxPermSize=200m -Ddebug=true -server -XX:+HeapDumpOnOutOfMemoryError -Djava.awt.headless -DTC.res.disableAll=true -Dteamcity.development.mode=true -Dteamcity.development.shadowCopyClasses=true -Dteamcity.data.path=../../PluginDev.Data -Dteamcity_logs=../logs -Dlog4j.configuration=file:../conf/teamcity-server-log4j.xml" />
     <option name="UPDATING_POLICY" value="restart-server" />
-    <deployment>
-      <file path="$APPLICATION_HOME_DIR$/bin/%IDEA_RUN:TOMCAT_HOME%/webapps/ROOT">
-        <settings>
-          <option name="CONTEXT_PATH" value="/bs" />
-        </settings>
-      </file>
-    </deployment>
+    <deployment />
     <server-settings>
       <option name="BASE_DIRECTORY_NAME" value="Unnamed__NETPackagesSupport_2" />
     </server-settings>
@@ -85,11 +79,17 @@
         <option name="VM_PARAMETERS" value="" />
         <option name="PROGRAM_PARAMETERS" value="" />
       </SHUTDOWN>
+      <EnvironmentVariables>
+        <option name="NAME" value="CATALINA_BASE" />
+        <option name="VALUE" value="C:\Teamcity" />
+        <option name="IS_PREDEFINED" value="false" />
+      </EnvironmentVariables>
     </ConfigurationWrapper>
     <method>
       <option name="BuildArtifacts" enabled="true">
-        <artifact name="deploy" />
+        <artifact name="plugin-zip" />
       </option>
+      <option name="AntTarget" enabled="true" antfile="file://$PROJECT_DIR$/build/build.xml" target="deploy" />
     </method>
   </configuration>
 </component>

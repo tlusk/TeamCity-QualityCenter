@@ -17,7 +17,7 @@ public class QualityCenterIssueFetcher extends AbstractIssueFetcher {
   @NotNull
   @Override
   public IssueData getIssue(@NotNull String host, @NotNull String id, @Nullable Credentials credentials) throws Exception {
-    throw new NotFoundException("UNIMPLEMENTED");
+    throw new NotFoundException("UNIMPLE MENTED");
   }
 
   @NotNull

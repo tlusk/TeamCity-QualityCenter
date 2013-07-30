@@ -1,0 +1,12 @@
+<project name="TeamCity-QualityCenter" default="deploy" basedir=".">
+  <description>
+    Ant build for TeamCity-QualityCenter
+  </description>
+
+  <property name="plugin-destination" location="C:\PluginDev.Data\plugins"/>
+
+  <target name="deploy">
+    <copy file="../out/artifacts/plugin_zip/qualitycenter.zip" tofile="${plugin-destination}/qualitycenter.zip"/>
+  </target>
+
+</project>
