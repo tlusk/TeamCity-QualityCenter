@@ -9,7 +9,7 @@ public class QualityCenterIssueProviderFactory extends AbstractIssueProviderFact
 
   private static String FACTORY_TYPE = "QualityCenter";
 
-  protected QualityCenterIssueProviderFactory(@NotNull IssueFetcher fetcher) {
+  public QualityCenterIssueProviderFactory(@NotNull IssueFetcher fetcher) {
     super(fetcher, FACTORY_TYPE);
   }
 
