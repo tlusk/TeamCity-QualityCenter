@@ -1,0 +1,19 @@
+<component name="ArtifactManager">
+  <artifact name="TeamCity Zipped Plugin">
+    <output-path>$PROJECT_DIR$/out/artifacts/plugin_zip</output-path>
+    <root id="root">
+      <element id="archive" name="qualitycenter.zip">
+        <element id="directory" name="server">
+          <element id="archive" name="qualitycenter-server.jar">
+            <element id="module-output" name="server" />
+          </element>
+          <element id="archive" name="qualitycenter-resources.jar">
+            <element id="directory" name="buildServerResources">
+              <element id="dir-copy" path="$PROJECT_DIR$/server/resources" />
+            </element>
+          </element>
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

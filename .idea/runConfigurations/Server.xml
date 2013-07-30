@@ -97,7 +97,7 @@
     </ConfigurationWrapper>
     <method>
       <option name="BuildArtifacts" enabled="true">
-        <artifact name="plugin-zip" />
+        <artifact name="TeamCity Zipped Plugin" />
       </option>
       <option name="AntTarget" enabled="true" antfile="file://$PROJECT_DIR$/build/build.xml" target="deploy" />
     </method>
