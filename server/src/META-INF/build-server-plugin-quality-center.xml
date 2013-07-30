@@ -7,11 +7,11 @@
   <!-- declare all beans you like Spring Dependency Injection to create -->
   <!-- see http://static.springsource.org/spring/docs/3.0.x/spring-framework-reference/html/beans.html -->
 
-  <bean id="qualitycenterFetcher" class="com.lenel.teamcity.QualityCenterIssueFetcher">
+  <bean id="qualitycenterFetcher" class="darkcube.teamcity.issueTracker.QualityCenterIssueFetcher">
     <constructor-arg index="0" ref="ehCacheUtil"/>
   </bean>
 
-  <bean id="qualitycenterFactory" class="com.lenel.teamcity.QualityCenterIssueProviderFactory">
+  <bean id="qualitycenterFactory" class="darkcube.teamcity.issueTracker.QualityCenterIssueProviderFactory">
     <constructor-arg index="0" ref="qualitycenterFetcher"/>
   </bean>
 

@@ -1,5 +1,6 @@
-package com.lenel.teamcity;
+package darkcube.teamcity.issueTracker;
 
+import jetbrains.buildServer.issueTracker.errors.NotFoundException;
 import jetbrains.buildServer.util.cache.EhCacheUtil;
 import jetbrains.buildServer.issueTracker.AbstractIssueFetcher;
 import jetbrains.buildServer.issueTracker.IssueData;
@@ -16,12 +17,12 @@ public class QualityCenterIssueFetcher extends AbstractIssueFetcher {
   @NotNull
   @Override
   public IssueData getIssue(@NotNull String host, @NotNull String id, @Nullable Credentials credentials) throws Exception {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
+    throw new NotFoundException("UNIMPLEMENTED");
   }
 
   @NotNull
   @Override
   public String getUrl(@NotNull String host, @NotNull String id) {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
+    return "td://PROJECT.DOMAIN." + host + "/gcbin/Defects?Action=FindDefect&DefectID=" + id;
   }
 }

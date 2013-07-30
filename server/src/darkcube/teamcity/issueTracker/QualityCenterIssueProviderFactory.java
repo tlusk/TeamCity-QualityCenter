@@ -1,4 +1,4 @@
-package com.lenel.teamcity;
+package darkcube.teamcity.issueTracker;
 
 import jetbrains.buildServer.issueTracker.AbstractIssueProviderFactory;
 import jetbrains.buildServer.issueTracker.IssueFetcher;
@@ -7,13 +7,15 @@ import org.jetbrains.annotations.NotNull;
 
 public class QualityCenterIssueProviderFactory extends AbstractIssueProviderFactory {
 
+  private static String FACTORY_TYPE = "QualityCenter";
+
   protected QualityCenterIssueProviderFactory(@NotNull IssueFetcher fetcher) {
-    super(fetcher, "QualityCenter");
+    super(fetcher, FACTORY_TYPE);
   }
 
   @NotNull
   @Override
   public IssueProvider createProvider() {
-    return new QualityCenterIssueProvider(myFetcher);
+    return new QualityCenterIssueProvider(FACTORY_TYPE, myFetcher);
   }
 }
