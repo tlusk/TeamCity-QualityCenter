@@ -12,6 +12,21 @@
               <element id="dir-copy" path="$PROJECT_DIR$/server/resources" />
             </element>
           </element>
+          <element id="archive" name="qualitycenter-rest-api.jar">
+            <element id="module-output" name="QualityCenter Java Client" />
+          </element>
+          <element id="library" level="project" name="Maven: com.google.guava:guava:14.0.1" />
+          <element id="library" level="project" name="Maven: javax.annotation:javax.annotation-api:1.2" />
+          <element id="library" level="project" name="Maven: javax.ws.rs:javax.ws.rs-api:2.0" />
+          <element id="library" level="project" name="Maven: org.glassfish.hk2.external:asm-all-repackaged:2.2.0-b10" />
+          <element id="library" level="project" name="Maven: org.glassfish.hk2.external:cglib:2.2.0-b10" />
+          <element id="library" level="project" name="Maven: org.glassfish.hk2.external:javax.inject:2.2.0-b10" />
+          <element id="library" level="project" name="Maven: org.glassfish.hk2:hk2-api:2.2.0-b10" />
+          <element id="library" level="project" name="Maven: org.glassfish.hk2:hk2-locator:2.2.0-b10" />
+          <element id="library" level="project" name="Maven: org.glassfish.hk2:hk2-utils:2.2.0-b10" />
+          <element id="library" level="project" name="Maven: org.glassfish.hk2:osgi-resource-locator:1.0.1" />
+          <element id="library" level="project" name="Maven: org.glassfish.jersey.core:jersey-client:2.1" />
+          <element id="library" level="project" name="Maven: org.glassfish.jersey.core:jersey-common:2.1" />
         </element>
       </element>
     </root>
