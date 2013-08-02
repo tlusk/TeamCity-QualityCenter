@@ -38,13 +38,13 @@
       </td>
     </tr>
     <tr>
-      <th><label for="idPrefix" class="shortLabel">Project IDs: <l:star/></label></th>
+      <th><label for="idPrefix" class="shortLabel">Project Mapping: <l:star/></label></th>
       <td>
         <jsp:useBean id="propertiesBean" scope="request" type="jetbrains.buildServer.controllers.BasePropertiesBean"/>
         <forms:textField name="prop:idPrefix" id="idPrefix" style="width: 16em;" expandable="true"
                          value="${propertiesBean.properties['idPrefix']}"/>
         <span id="error_idPrefix" class="error"></span>
-        <span class="fieldExplanation">Space-separated list of project ids.</span>
+        <span class="fieldExplanation">Space-separated list of domain:project:key pairs.</span>
       </td>
     </tr>
   </table>

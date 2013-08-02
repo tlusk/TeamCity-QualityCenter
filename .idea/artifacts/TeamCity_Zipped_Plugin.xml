@@ -28,6 +28,7 @@
           <element id="library" level="project" name="Maven: org.glassfish.jersey.core:jersey-client:2.1" />
           <element id="library" level="project" name="Maven: org.glassfish.jersey.core:jersey-common:2.1" />
         </element>
+        <element id="file-copy" path="$PROJECT_DIR$/server/teamcity-plugin.xml" />
       </element>
     </root>
   </artifact>
