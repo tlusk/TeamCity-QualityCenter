@@ -6,7 +6,7 @@
   <property name="plugin-destination" location="C:\PluginDev.Data\plugins"/>
 
   <target name="deploy">
-    <copy file="../out/artifacts/plugin_zip/qualitycenter.zip" tofile="${plugin-destination}/qualitycenter.zip"/>
+    <copy file="../out/artifacts/plugin_zip/QualityCenter.zip" tofile="${plugin-destination}/QualityCenter.zip"/>
   </target>
 
 </project>

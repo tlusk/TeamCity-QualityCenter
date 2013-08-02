@@ -14,11 +14,19 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class QualityCenterIssueFetcher extends AbstractIssueFetcher {
 
+  private Pattern myPattern;
+
   public QualityCenterIssueFetcher(@NotNull EhCacheUtil cacheUtil) {
     super(cacheUtil);
+  }
+
+  public void setPattern(final Pattern _myPattern) {
+    myPattern = _myPattern;
   }
 
   @NotNull
@@ -26,6 +34,7 @@ public class QualityCenterIssueFetcher extends AbstractIssueFetcher {
   public IssueData getIssue(@NotNull String host, @NotNull String id, @Nullable Credentials credentials) throws Exception {
     String username = "";
     String password = "";
+    String realId = getRealId(id);
 
     if(credentials instanceof UsernamePasswordCredentials) {
       username = ((UsernamePasswordCredentials)credentials).getUserName();
@@ -37,7 +46,7 @@ public class QualityCenterIssueFetcher extends AbstractIssueFetcher {
 
     List<Domain> domains = client.getDomains();
     List<Project> projects = client.getProjects(domains.get(0).getName());
-    Defect defect = client.getDefect(domains.get(0).getName(),projects.get(0).getName(),Integer.parseInt(id));
+    Defect defect = client.getDefect(domains.get(0).getName(),projects.get(0).getName(),Integer.parseInt(realId));
 
     IssueData issueData = new IssueData(id, defect.getField(DefectField.NAME), defect.getField(DefectField.STATUS), getUrl(host, id), false);
     return issueData;
@@ -47,5 +56,14 @@ public class QualityCenterIssueFetcher extends AbstractIssueFetcher {
   @Override
   public String getUrl(@NotNull String host, @NotNull String id) {
     return "td://PROJECT.DOMAIN." + host + "/gcbin/Defects?Action=FindDefect&DefectID=" + id;
+  }
+
+  private String getRealId(@NotNull String id) {
+    Matcher matcher = myPattern.matcher(id);
+    String realId = id;
+    if (matcher.find()) {
+      realId = matcher.group(2);
+    }
+    return realId;
   }
 }
