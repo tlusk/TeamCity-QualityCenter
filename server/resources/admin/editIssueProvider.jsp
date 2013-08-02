@@ -6,7 +6,7 @@
     <c:if test="${showType}">
       <tr>
         <th><label class="shortLabel">Connection Type:</label></th>
-        <td>YouTrack</td>  <%--'Charisma' is renamed to 'YouTrack'.--%>
+        <td>QualityCenter</td>
       </tr>
     </c:if>
     <tr>

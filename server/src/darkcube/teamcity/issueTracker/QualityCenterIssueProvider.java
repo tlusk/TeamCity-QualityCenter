@@ -54,17 +54,6 @@ public class QualityCenterIssueProvider extends AbstractIssueProvider {
   }
 
   @Override
-  protected String extractId(@NotNull String match) {
-    Matcher matcher = myPattern.matcher(match);
-    matcher.find();
-    if (matcher.groupCount() >= 1) {
-      return matcher.group(1);
-    } else {
-      return super.extractId(match);
-    }
-  }
-
-  @Override
   protected boolean useIdPrefix() {
     return true;
   }
