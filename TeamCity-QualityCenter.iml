@@ -1,50 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module type="JAVA_MODULE" version="4">
-  <component name="FacetManager">
-    <facet type="Spring" name="Spring">
-      <configuration>
-        <fileset id="fileset1" name="idea resolve helper" removed="false">
-          <file>file://$TeamCityDistribution$/webapps/ROOT/WEB-INF/build-server-plugin-agents-statistics-web.xml</file>
-          <file>file://$TeamCityDistribution$/webapps/ROOT/WEB-INF/build-server-plugin-buildFailures.xml</file>
-          <file>file://$TeamCityDistribution$/webapps/ROOT/WEB-INF/build-server-plugin-dotnet-pdb.xml</file>
-          <file>file://$TeamCityDistribution$/webapps/ROOT/WEB-INF/build-server-plugin-freespace.xml</file>
-          <file>file://$TeamCityDistribution$/webapps/ROOT/WEB-INF/buildServerConfigurator.xml</file>
-          <file>file://$TeamCityDistribution$/webapps/ROOT/WEB-INF/buildServerPluginsSupportWeb.xml</file>
-          <file>file://$TeamCityDistribution$/webapps/ROOT/WEB-INF/buildServerSpringStatistics.xml</file>
-          <file>file://$TeamCityDistribution$/webapps/ROOT/WEB-INF/buildServerSpringWeb.xml</file>
-        </fileset>
-      </configuration>
-    </facet>
-    <facet type="web" name="Web">
-      <configuration>
-        <descriptors>
-          <deploymentDescriptor name="web.xml" url="file://$TeamCityDistribution$/webapps/ROOT/WEB-INF/web.xml" />
-        </descriptors>
-        <webroots>
-          <root url="file://$TeamCityDistribution$/webapps/ROOT" relative="\" />
-        </webroots>
-        <sourceRoots>
-          <root url="file://$TeamCityDistribution$/webapps/ROOT" />
-        </sourceRoots>
-      </configuration>
-    </facet>
-  </component>
-  <component name="NewModuleRootManager" inherit-compiler-output="true">
+<module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_5" inherit-compiler-output="false">
+    <output url="file://$MODULE_DIR$/target/classes" />
+    <output-test url="file://$MODULE_DIR$/target/test-classes" />
     <exclude-output />
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/target" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$TeamCityDistribution$/webapps/ROOT/WEB-INF/lib/standard.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="library" name="standard.jar" level="project" />
-    <orderEntry type="library" name="TeamCity server runtime" level="project" />
   </component>
 </module>
 

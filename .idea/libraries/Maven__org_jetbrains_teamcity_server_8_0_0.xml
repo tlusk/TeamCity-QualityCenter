@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Maven: org.jetbrains.teamcity:server:8.0.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/teamcity-qualitycenter-server/lib/server.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

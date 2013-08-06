@@ -1,9 +1,0 @@
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="TeamCity-QualityCenter tests">
-  <test name="TeamCity-QualityCenter tests">
-    <classes>
-      <class name="SimpleTest"/>
-    </classes>
-  </test>
-</suite>
-

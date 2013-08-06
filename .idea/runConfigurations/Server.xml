@@ -96,10 +96,8 @@
       </EnvironmentVariables>
     </ConfigurationWrapper>
     <method>
-      <option name="BuildArtifacts" enabled="true">
-        <artifact name="TeamCity Zipped Plugin" />
-      </option>
-      <option name="AntTarget" enabled="true" antfile="file://$PROJECT_DIR$/build/build.xml" target="deploy" />
+      <option name="Make" enabled="false" />
+      <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/pom.xml" goal="install" />
     </method>
   </configuration>
 </component>
