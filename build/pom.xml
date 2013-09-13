@@ -82,7 +82,7 @@
                                 <artifactId>${project.artifactId}</artifactId>
                                 <version>${project.version}</version>
                                 <type>zip</type>
-                                <destFileName>QualityCenter.zip</destFileName>
+                                <destFileName>qualitycenter.zip</destFileName>
                             </artifactItem>
                         </artifactItems>
                         <outputDirectory>C:\PluginDev.Data\plugins</outputDirectory>
