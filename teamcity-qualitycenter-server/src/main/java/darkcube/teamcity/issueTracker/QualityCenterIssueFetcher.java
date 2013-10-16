@@ -35,26 +35,54 @@ public class QualityCenterIssueFetcher extends AbstractIssueFetcher {
     this.projectMapping = projectMapping;
   }
 
+  public class QualityCenterIssueFetchFunction implements AbstractIssueFetcher.FetchFunction {
+
+      private String host;
+      private String id;
+      private UsernamePasswordCredentials credentials;
+
+      public QualityCenterIssueFetchFunction(final String host, final String id, final Credentials credentials) {
+          if (host.length() == 0) {
+              throw new IllegalArgumentException(String.format("ServerUrl cannot be empty"));
+          }
+          if (!(credentials instanceof UsernamePasswordCredentials)) {
+              throw new IllegalArgumentException(String.format("Credentials must be of UsernamePasswordCredentials type"));
+          }
+
+          this.host = host;
+          this.id = id;
+          this.credentials = (UsernamePasswordCredentials)credentials;
+      }
+
+      @NotNull
+      public IssueData fetch() {
+          ProjectIdMapping idPair = getRealId(id);
+          ProjectDomainMapping projectMap = projectMapping.get(idPair.getProject());
+
+          QCRestClient client = new QCRestClient(host, credentials.getUserName(), credentials.getPassword());
+          client.login();
+
+          Defect defect = client.getDefect(projectMap.getDomain(), projectMap.getProject() ,idPair.getId());
+
+          String status = defect.getField(DefectField.STATUS);
+          Boolean resolved = false;
+          if(status.equals("Fixed") ||
+             status.equals("Closed") ||
+             status.equals("Rejected") ||
+             status.equals("Verified"))
+          {
+              resolved = true;
+          }
+
+          IssueData issueData = new IssueData(id, defect.getField(DefectField.NAME), status, getUrl(host, id), resolved);
+          return issueData;
+      }
+  }
+
   @NotNull
   public IssueData getIssue(@NotNull String host, @NotNull String id, @Nullable Credentials credentials) throws Exception {
-    ProjectIdMapping idPair = getRealId(id);
-    ProjectDomainMapping projectMap = projectMapping.get(idPair.getProject());
-
-    String username = "";
-    String password = "";
-
-    if(credentials instanceof UsernamePasswordCredentials) {
-      username = ((UsernamePasswordCredentials)credentials).getUserName();
-      password = ((UsernamePasswordCredentials)credentials).getPassword();
-    }
-
-    QCRestClient client = new QCRestClient(host, username, password);
-    client.login();
-
-    Defect defect = client.getDefect(projectMap.getDomain(), projectMap.getProject() ,idPair.getId());
-
-    IssueData issueData = new IssueData(id, defect.getField(DefectField.NAME), defect.getField(DefectField.STATUS), getUrl(host, id), false);
-    return issueData;
+    String url = getUrl(host, id);
+    return getFromCacheOrFetch(url, new QualityCenterIssueFetchFunction(host, id, credentials));
   }
 
   @NotNull
