@@ -19,6 +19,7 @@ import java.util.regex.Pattern;
 
 public class QualityCenterIssueFetcher extends AbstractIssueFetcher {
 
+  private static Pattern HOSTNAME_PATTERN = Pattern.compile("^https?://(?<hostname>[^/:?#]+)(?:[/:?#]|$)");
   private Pattern pattern;
   private Map<String,ProjectDomainMapping> projectMapping;
 
@@ -61,7 +62,7 @@ public class QualityCenterIssueFetcher extends AbstractIssueFetcher {
     ProjectIdMapping idPair = getRealId(id);
     ProjectDomainMapping projectMap = projectMapping.get(idPair.getProject());
 
-    return "td://" + projectMap.getProject() + "." + projectMap.getDomain() + "." + host + "/gcbin/Defects?Action=FindDefect&DefectID=" + id;
+    return "td://" + projectMap.getProject() + "." + projectMap.getDomain() + "." + getHostname(host) + "/qcbin/Defects?Action=FindDefect&DefectID=" + idPair.getId();
   }
 
   private ProjectIdMapping getRealId(@NotNull String id) {
@@ -74,6 +75,16 @@ public class QualityCenterIssueFetcher extends AbstractIssueFetcher {
       return new ProjectIdMapping(realId, project);
     }
     return null;
+  }
+
+  private String getHostname(@NotNull String host) {
+    Matcher matcher = HOSTNAME_PATTERN.matcher(host);
+
+    if (matcher.find()) {
+      return matcher.group("hostname");
+    }
+
+    return "";
   }
 }
 
