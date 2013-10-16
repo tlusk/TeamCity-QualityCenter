@@ -13,8 +13,8 @@ import java.util.regex.Pattern;
 
 public class QualityCenterIssueProvider extends AbstractIssueProvider {
 
-  public QualityCenterIssueProvider(@NotNull String type, @NotNull IssueFetcher fetcher) {
-    super(type, fetcher);
+  public QualityCenterIssueProvider(@NotNull IssueFetcher fetcher) {
+    super("qualitycenter", fetcher);
   }
 
   @Override

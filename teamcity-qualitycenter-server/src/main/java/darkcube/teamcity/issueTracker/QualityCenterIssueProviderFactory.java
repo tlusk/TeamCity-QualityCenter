@@ -7,14 +7,12 @@ import org.jetbrains.annotations.NotNull;
 
 public class QualityCenterIssueProviderFactory extends AbstractIssueProviderFactory {
 
-  private static String FACTORY_TYPE = "QualityCenter";
-
   public QualityCenterIssueProviderFactory(@NotNull IssueFetcher fetcher) {
-    super(fetcher, FACTORY_TYPE);
+    super(fetcher, "QualityCenter");
   }
 
   @NotNull
   public IssueProvider createProvider() {
-    return new QualityCenterIssueProvider(FACTORY_TYPE, myFetcher);
+    return new QualityCenterIssueProvider(myFetcher);
   }
 }
